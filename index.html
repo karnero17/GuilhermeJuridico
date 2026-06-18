@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site institucional de Guilherme Theodoro Fredrich — Advocacia e Consultoria Jurídica.">
+  <title>Guilherme Theodoro Fredrich | Advocacia e Consultoria Jurídica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --bg: #07111F;
+      --card: #101B2D;
+      --gold: #C9A646;
+      --ice: #F5F5F5;
+      --muted: #B8C0CC;
+      --divider: rgba(255,255,255,0.12);
+      --whatsapp: #25D366;
+      --header-height: 92px;
+      --shadow: 0 22px 50px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ice); font-family: "Montserrat", sans-serif; line-height: 1.7; }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .section { display: none; min-height: calc(100vh - var(--header-height)); padding-top: var(--header-height); }
+    .section.active { display: block; animation: fadeIn .55s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+    .site-header { position: fixed; z-index: 1000; inset: 0 0 auto; height: var(--header-height); background: rgba(7,17,31,.82); border-bottom: 1px solid var(--divider); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { min-width: 230px; line-height: 1.2; }
+    .brand strong { display: block; font-family: "Playfair Display", serif; color: var(--ice); font-size: clamp(1rem, 1.8vw, 1.28rem); }
+    .brand span { color: var(--gold); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-wrap { display: flex; align-items: center; gap: 22px; }
+    .nav-list { display: flex; align-items: center; gap: 22px; list-style: none; }
+    .nav-link { position: relative; color: var(--muted); font-size: .78rem; font-weight: 500; white-space: nowrap; transition: color .25s; }
+    .nav-link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 1px; background: var(--gold); transition: right .25s; }
+    .nav-link:hover, .nav-link.current { color: var(--ice); }
+    .nav-link.current::after { right: 0; }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--ice); font-size: 1.35rem; cursor: pointer; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border: 1px solid var(--gold); background: var(--gold); color: #07111F; font-size: .78rem; font-weight: 600; letter-spacing: .04em; cursor: pointer; transition: transform .25s, background .25s, color .25s, box-shadow .25s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,166,70,.18); }
+    .btn-outline { background: transparent; color: var(--ice); border-color: rgba(255,255,255,.35); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-small { min-height: 40px; padding: 0 18px; }
+
+    .hero { min-height: calc(90vh - var(--header-height)); display: grid; place-items: center; text-align: center; background: linear-gradient(rgba(7,17,31,.76), rgba(7,17,31,.9)), url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=85") center/cover; }
+    .hero-content { max-width: 920px; padding: 70px 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--gold); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.18; }
+    h1 { font-size: clamp(2.55rem, 6vw, 5.2rem); max-width: 900px; margin: 0 auto 24px; }
+    .hero p { max-width: 730px; margin: 0 auto 34px; color: var(--muted); font-size: clamp(.98rem, 1.5vw, 1.15rem); }
+    .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+    .features { padding: 72px 0 90px; }
+    .feature-grid, .practice-grid, .experience-grid, .contact-cards { display: grid; gap: 22px; }
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
+    .card { background: var(--card); border: 1px solid var(--divider); transition: transform .3s, border-color .3s, box-shadow .3s; }
+    .card:hover { transform: translateY(-6px); border-color: rgba(201,166,70,.55); box-shadow: var(--shadow); }
+    .feature-card { padding: 34px; }
+    .icon-box { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 22px; border: 1px solid rgba(201,166,70,.45); color: var(--gold); font-size: 1.15rem; }
+    .feature-card h3, .practice-card h3, .experience-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
+    .card p { color: var(--muted); font-size: .88rem; }
+
+    .page-intro { padding: 88px 0 50px; text-align: center; }
+    .page-intro h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 5vw, 3.8rem); }
+    .page-intro p { max-width: 680px; margin-inline: auto; color: var(--muted); }
+    .content-pad { padding: 30px 0 100px; }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(45px, 8vw, 100px); }
+    .about-image { position: relative; }
+    .about-image img { width: 100%; height: 580px; object-fit: cover; filter: saturate(.72); }
+    .floating-badge { position: absolute; right: -25px; bottom: 35px; max-width: 190px; padding: 22px; background: var(--gold); color: var(--bg); font-family: "Playfair Display", serif; font-weight: 700; box-shadow: var(--shadow); }
+    .about-copy h2 { margin-bottom: 24px; font-size: clamp(2.1rem, 4vw, 3.35rem); }
+    .about-copy > p { margin-bottom: 18px; color: var(--muted); }
+    .institutional-quote { margin: 28px 0; padding-left: 24px; border-left: 2px solid var(--gold); color: var(--ice) !important; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-style: italic; line-height: 1.4; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mini-card { padding: 18px 14px; border: 1px solid var(--divider); color: var(--muted); font-size: .75rem; text-align: center; }
+    .mini-card i { display: block; margin-bottom: 10px; color: var(--gold); font-size: 1rem; }
+
+    .practice-grid { grid-template-columns: repeat(3, 1fr); }
+    .practice-card { min-height: 310px; padding: 34px; display: flex; flex-direction: column; align-items: flex-start; }
+    .practice-card p { flex: 1; margin-bottom: 24px; }
+    .text-link { color: var(--gold); border: 0; background: transparent; font-size: .76rem; font-weight: 600; cursor: pointer; }
+    .text-link i { margin-left: 7px; transition: transform .2s; }
+    .text-link:hover i { transform: translateX(4px); }
+
+    .experience-wrap { position: relative; }
+    .experience-wrap::before { content: ""; position: absolute; inset: 40px -100vw auto; height: 1px; background: var(--divider); }
+    .experience-grid { grid-template-columns: repeat(2, 1fr); }
+    .experience-card { position: relative; overflow: hidden; padding: 40px; }
+    .experience-card::after { content: attr(data-number); position: absolute; right: 22px; top: 8px; color: rgba(201,166,70,.1); font-family: "Playfair Display", serif; font-size: 5rem; line-height: 1; }
+    .experience-card .icon-box { position: relative; z-index: 1; }
+    .disclaimer { margin-top: 30px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,166,70,.06); color: var(--muted); font-size: .78rem; }
+
+    .contact-cards { grid-template-columns: repeat(3, 1fr); margin-bottom: 34px; }
+    .contact-card { padding: 28px; text-align: center; }
+    .contact-card i { margin-bottom: 16px; color: var(--gold); font-size: 1.5rem; }
+    .contact-card h3 { margin-bottom: 6px; font-size: 1rem; }
+    .contact-card p, .contact-card a { color: var(--muted); font-size: .78rem; }
+    .contact-card a:hover { color: var(--gold); }
+    .contact-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; }
+    .contact-form, .map-panel { background: var(--card); border: 1px solid var(--divider); }
+    .contact-form { padding: clamp(24px, 4vw, 42px); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field-full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; color: var(--muted); font-size: .72rem; }
+    input, select, textarea { width: 100%; border: 1px solid var(--divider); border-radius: 0; background: #0A1525; color: var(--ice); padding: 13px 14px; transition: border-color .2s; }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: none; }
+    textarea { min-height: 132px; resize: vertical; }
+    .form-note { margin-top: 14px; color: var(--muted); font-size: .7rem; }
+    .form-status { min-height: 24px; margin-top: 12px; color: var(--gold); font-size: .78rem; }
+    .map-panel { min-height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+    .map-panel iframe { width: 100%; min-height: 390px; flex: 1; border: 0; filter: saturate(.7) contrast(1.05); }
+    .map-caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 24px; border-top: 1px solid var(--divider); }
+    .map-caption i { color: var(--gold); margin-right: 10px; }
+    .map-caption h3 { font-family: "Montserrat", sans-serif; font-size: .83rem; line-height: 1.5; }
+    .map-caption a { flex: 0 0 auto; color: var(--gold); font-size: .72rem; font-weight: 600; }
+    .map-caption a:hover { color: var(--ice); }
+
+    .site-footer { padding: 54px 0 25px; border-top: 1px solid var(--divider); background: #050D18; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr .7fr; gap: 40px; align-items: start; }
+    .footer-title { margin-bottom: 8px; font-family: "Playfair Display", serif; font-size: 1.25rem; }
+    .footer-subtitle, .legal { color: var(--muted); font-size: .72rem; }
+    .footer-heading { margin-bottom: 14px; color: var(--gold); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 20px; }
+    .footer-links button { padding: 0; border: 0; background: none; color: var(--muted); font-size: .75rem; text-align: left; cursor: pointer; }
+    .footer-links button:hover { color: var(--gold); }
+    .socials { display: flex; gap: 10px; }
+    .socials span { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--divider); color: var(--muted); cursor: not-allowed; }
+    .footer-bottom { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--divider); display: flex; justify-content: space-between; gap: 20px; }
+
+    .whatsapp-float { position: fixed; z-index: 900; right: 24px; bottom: 24px; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--whatsapp); color: #fff; font-size: 1.65rem; box-shadow: 0 12px 30px rgba(0,0,0,.35); transition: transform .25s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    @media (max-width: 980px) {
+      :root { --header-height: 78px; }
+      .menu-toggle { display: block; z-index: 2; }
+      .header-cta { display: none; }
+      .nav-list { position: fixed; inset: var(--header-height) 0 0; height: calc(100vh - var(--header-height)); padding: 42px 24px; background: rgba(7,17,31,.98); flex-direction: column; align-items: stretch; gap: 0; transform: translateX(100%); visibility: hidden; transition: transform .3s, visibility .3s; }
+      .nav-list.open { transform: translateX(0); visibility: visible; }
+      .nav-link { display: block; padding: 17px 0; border-bottom: 1px solid var(--divider); font-size: .9rem; }
+      .nav-link::after { display: none; }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { max-width: 650px; }
+      .about-image img { height: 480px; }
+      .floating-badge { right: -10px; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .hero { min-height: calc(100svh - var(--header-height)); }
+      .hero-content { padding: 45px 0; }
+      .button-row { flex-direction: column; align-items: stretch; }
+      .feature-grid, .practice-grid, .experience-grid, .contact-cards, .contact-layout, .footer-grid { grid-template-columns: 1fr; }
+      .features { padding: 42px 0 65px; }
+      .page-intro { padding: 62px 0 30px; }
+      .content-pad { padding: 18px 0 72px; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .about-image img { height: 400px; }
+      .floating-badge { right: 10px; bottom: 15px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .map-panel iframe { min-height: 330px; }
+      .map-caption { align-items: flex-start; flex-direction: column; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp-float { width: 52px; height: 52px; right: 16px; bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" data-section="home" aria-label="Ir para a página inicial">
+        <strong>Guilherme Theodoro Fredrich</strong>
+        <span>Advocacia e Consultoria Jurídica</span>
+      </a>
+      <div class="nav-wrap">
+        <nav aria-label="Navegação principal">
+          <ul class="nav-list" id="nav-list">
+            <li><a class="nav-link current" href="#home" data-section="home">Home</a></li>
+            <li><a class="nav-link" href="#sobre" data-section="sobre">Sobre</a></li>
+            <li><a class="nav-link" href="#areas" data-section="areas">Áreas de Atuação</a></li>
+            <li><a class="nav-link" href="#experiencias" data-section="experiencias">Atuação e Experiências</a></li>
+            <li><a class="nav-link" href="#contato" data-section="contato">Contato</a></li>
+          </ul>
+        </nav>
+        <a href="#contato" class="btn btn-small header-cta" data-section="contato">Fale com o Advogado</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section active" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="container hero-content">
+          <span class="eyebrow">Advocacia responsável</span>
+          <h1 id="home-title">Soluções jurídicas com estratégia, ética e segurança</h1>
+          <p>Atendimento jurídico personalizado para pessoas físicas e empresas, com análise cuidadosa e orientação clara para cada situação.</p>
+          <div class="button-row">
+            <a href="#contato" class="btn" data-section="contato"><i class="fa-regular fa-message"></i> Entrar em contato</a>
+            <a href="#areas" class="btn btn-outline" data-section="areas">Conhecer áreas de atuação</a>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <div class="container feature-grid">
+          <article class="card feature-card"><div class="icon-box"><i class="fa-regular fa-handshake"></i></div><h3>Atendimento personalizado</h3><p>Escuta atenta e orientação compatível com as particularidades de cada demanda.</p></article>
+          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div><h3>Análise estratégica do caso</h3><p>Avaliação criteriosa dos fatos, documentos e caminhos juridicamente adequados.</p></article>
+          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><h3>Ética, transparência e discrição</h3><p>Comunicação objetiva e condução responsável em todas as etapas do atendimento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section" aria-labelledby="sobre-title">
+      <div class="container content-pad" style="padding-top:80px">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Ambiente profissional de escritório" loading="lazy">
+            <div class="floating-badge">Atuação Jurídica Especializada</div>
+          </div>
+          <div class="about-copy">
+            <span class="eyebrow">Perfil profissional</span>
+            <h2 id="sobre-title">Sobre Guilherme Theodoro Fredrich</h2>
+            <p>Guilherme Theodoro Fredrich desenvolve uma advocacia pautada pelo atendimento jurídico responsável, pela comunicação clara e pela análise cuidadosa das necessidades de cada cliente.</p>
+            <p>A atuação é conduzida de forma personalizada, considerando as circunstâncias específicas de cada demanda para orientar decisões com segurança e transparência.</p>
+            <p class="institutional-quote">“Rigor técnico, diálogo transparente e atenção individual em cada orientação jurídica.”</p>
+            <div class="mini-grid">
+              <div class="mini-card"><i class="fa-regular fa-comments"></i>Atendimento consultivo</div>
+              <div class="mini-card"><i class="fa-solid fa-magnifying-glass"></i>Atuação preventiva</div>
+              <div class="mini-card"><i class="fa-solid fa-fingerprint"></i>Soluções personalizadas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section" aria-labelledby="areas-title">
+      <div class="container">
+        <header class="page-intro"><span class="eyebrow">Serviços jurídicos</span><h2 id="areas-title">Áreas de Atuação</h2><p>Orientação jurídica técnica e individualizada, conforme as particularidades de cada situação.</p></header>
+        <div class="practice-grid content-pad">
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-landmark"></i></div><h3>Direito Civil</h3><p>Orientação em obrigações, responsabilidade civil, questões patrimoniais e relações privadas.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-people-roof"></i></div><h3>Direito de Família</h3><p>Acompanhamento responsável em demandas familiares, com sensibilidade, discrição e clareza.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-briefcase"></i></div><h3>Direito Trabalhista</h3><p>Análise e orientação sobre relações de trabalho, direitos, deveres e prevenção de conflitos.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-building"></i></div><h3>Direito Empresarial</h3><p>Suporte jurídico para questões societárias, negociais e rotinas legais da atividade empresarial.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-file-signature"></i></div><h3>Direito Contratual</h3><p>Elaboração, revisão e interpretação de contratos, com atenção a riscos e obrigações.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-chess-knight"></i></div><h3>Consultoria Jurídica Preventiva</h3><p>Identificação de riscos e orientação antecipada para decisões juridicamente mais seguras.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencias" class="section" aria-labelledby="experiencias-title">
+      <div class="container experience-wrap">
+        <header class="page-intro"><span class="eyebrow">Abordagem profissional</span><h2 id="experiencias-title">Atuação e Experiências</h2><p>Frentes de trabalho conduzidas com atenção técnica, diálogo e análise individual.</p></header>
+        <div class="experience-grid content-pad" style="padding-bottom:0">
+          <article class="card experience-card" data-number="01"><div class="icon-box"><i class="fa-regular fa-handshake"></i></div><h3>Negociação extrajudicial</h3><p>Condução de tratativas e construção de alternativas consensuais, quando adequadas às circunstâncias analisadas.</p></article>
+          <article class="card experience-card" data-number="02"><div class="icon-box"><i class="fa-solid fa-file-circle-check"></i></div><h3>Análise preventiva de contratos</h3><p>Leitura técnica de cláusulas, identificação de obrigações e avaliação de riscos antes da formalização.</p></article>
+          <article class="card experience-card" data-number="03"><div class="icon-box"><i class="fa-regular fa-compass"></i></div><h3>Orientação jurídica personalizada</h3><p>Esclarecimento de dúvidas e apresentação de caminhos jurídicos compatíveis com a situação do cliente.</p></article>
+          <article class="card experience-card" data-number="04"><div class="icon-box"><i class="fa-solid fa-route"></i></div><h3>Resolução estratégica de conflitos</h3><p>Análise dos cenários disponíveis para definição de uma abordagem técnica, proporcional e responsável.</p></article>
+        </div>
+        <p class="disclaimer">As informações apresentadas possuem caráter ilustrativo e não representam promessa de resultado. Cada caso depende de análise individual.</p>
+        <div style="height:90px"></div>
+      </div>
+    </section>
+
+    <section id="contato" class="section" aria-labelledby="contato-title">
+      <div class="container">
+        <header class="page-intro"><span class="eyebrow">Atendimento</span><h2 id="contato-title">Entre em contato</h2><p>Agende uma conversa para análise inicial do seu caso.</p></header>
+        <div class="contact-cards">
+          <article class="card contact-card"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3><a href="https://wa.me/5547988026107" target="_blank" rel="noopener noreferrer">Iniciar conversa</a></article>
+          <article class="card contact-card"><i class="fa-regular fa-envelope"></i><h3>E-mail</h3><a href="mailto:guilhermef@tpa.com.br">Enviar e-mail</a></article>
+          <article class="card contact-card"><i class="fa-regular fa-calendar-check"></i><h3>Atendimento</h3><a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener noreferrer">Abrir Google Agenda</a></article>
+        </div>
+        <div class="contact-layout content-pad" style="padding-top:0">
+          <form class="contact-form" id="contact-form">
+            <div class="form-grid">
+              <div><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="name" required></div>
+              <div><label for="telefone">Telefone/WhatsApp</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" required></div>
+              <div><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div><label for="area">Área de interesse</label><select id="area" name="area" required><option value="">Selecione</option><option>Direito Civil</option><option>Direito de Família</option><option>Direito Trabalhista</option><option>Direito Empresarial</option><option>Direito Contratual</option><option>Consultoria Jurídica Preventiva</option><option>Outro assunto</option></select></div>
+              <div class="field-full"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" required></textarea></div>
+              <div class="field-full"><button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Enviar solicitação</button><p class="form-note">Formulário demonstrativo. O envio requer integração posterior com um serviço de e-mail ou servidor.</p><p class="form-status" role="status" aria-live="polite"></p></div>
+            </div>
+          </form>
+          <div class="map-panel">
+            <iframe
+              src="https://www.google.com/maps?q=-26.898158398702773,-49.261817271753976&amp;z=16&amp;output=embed"
+              title="Localização do escritório no Google Maps"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+            <div class="map-caption">
+              <h3><i class="fa-solid fa-location-dot"></i>Localização do escritório / Atendimento mediante agendamento</h3>
+              <a href="https://www.google.com/maps?q=-26.898158398702773,-49.261817271753976" target="_blank" rel="noopener noreferrer">Abrir no Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-title">Guilherme Theodoro Fredrich</div><p class="footer-subtitle">Advocacia e Consultoria Jurídica</p></div>
+        <div><div class="footer-heading">Links rápidos</div><div class="footer-links"><button data-section="home">Home</button><button data-section="sobre">Sobre</button><button data-section="areas">Áreas de Atuação</button><button data-section="experiencias">Atuação e Experiências</button><button data-section="contato">Contato</button></div></div>
+        <div><div class="footer-heading">Redes sociais</div><div class="socials" aria-label="Perfis ainda não informados"><span title="Perfil não informado"><i class="fa-brands fa-instagram"></i></span><span title="Perfil não informado"><i class="fa-brands fa-linkedin-in"></i></span></div></div>
+      </div>
+      <div class="footer-bottom"><p class="legal">Este site possui caráter informativo e não substitui uma consulta jurídica individualizada.</p><p class="legal">© <span id="year"></span> Guilherme Theodoro Fredrich</p></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5547988026107" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp" title="Falar pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+
+  <script>
+    (() => {
+      const sections = [...document.querySelectorAll('.section')];
+      const navLinks = [...document.querySelectorAll('.nav-link')];
+      const menu = document.querySelector('.nav-list');
+      const toggle = document.querySelector('.menu-toggle');
+
+      function closeMenu() {
+        menu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menu');
+        toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+
+      function showSection(id, updateHash = true) {
+        const target = document.getElementById(id);
+        if (!target || !target.classList.contains('section')) return;
+        sections.forEach(section => section.classList.toggle('active', section === target));
+        navLinks.forEach(link => {
+          const active = link.dataset.section === id;
+          link.classList.toggle('current', active);
+          if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+        });
+        closeMenu();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (updateHash && location.hash !== '#' + id) history.pushState({ section: id }, '', '#' + id);
+        document.title = (target.querySelector('h1, h2')?.textContent || 'Guilherme Theodoro Fredrich') + ' | Guilherme Theodoro Fredrich';
+      }
+
+      document.addEventListener('click', event => {
+        const trigger = event.target.closest('[data-section]');
+        if (!trigger) return;
+        event.preventDefault();
+        showSection(trigger.dataset.section);
+      });
+
+      document.querySelectorAll('[data-go-contact]').forEach(button => button.addEventListener('click', () => showSection('contato')));
+
+      toggle.addEventListener('click', () => {
+        const opening = !menu.classList.contains('open');
+        menu.classList.toggle('open', opening);
+        document.body.classList.toggle('menu-open', opening);
+        toggle.setAttribute('aria-expanded', String(opening));
+        toggle.setAttribute('aria-label', opening ? 'Fechar menu' : 'Abrir menu');
+        toggle.innerHTML = opening ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      window.addEventListener('popstate', () => showSection(location.hash.slice(1) || 'home', false));
+      window.addEventListener('resize', () => { if (innerWidth > 980) closeMenu(); });
+
+      document.getElementById('contact-form').addEventListener('submit', event => {
+        event.preventDefault();
+        event.currentTarget.querySelector('.form-status').textContent = 'Solicitação preparada. Configure um serviço de envio para ativar o formulário.';
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const initial = location.hash.slice(1);
+      if (initial && document.getElementById(initial)) showSection(initial, false);
+    })();
+  </script>
+</body>
+</html>
