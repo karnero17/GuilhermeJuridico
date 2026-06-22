@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site institucional de Guilherme Theodoro Fredrich — Advocacia e Consultoria Jurídica.">
+  <meta name="description" content="Guilherme Theodoro Fredrich - Advocacia cível, família, sucessões e consultoria jurídica em Indaial/SC.">
   <title>Guilherme Theodoro Fredrich | Advocacia e Consultoria Jurídica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,33 +58,33 @@
     .btn-small { min-height: 40px; padding: 0 18px; }
 
     .hero { min-height: calc(90vh - var(--header-height)); display: grid; place-items: center; text-align: center; background: linear-gradient(rgba(7,17,31,.76), rgba(7,17,31,.9)), url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=85") center/cover; }
-    .hero-content { max-width: 920px; padding: 70px 0; }
+    .hero-content { max-width: 930px; padding: 70px 0; }
     .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--gold); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
     h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.18; }
-    h1 { font-size: clamp(2.55rem, 6vw, 5.2rem); max-width: 900px; margin: 0 auto 24px; }
-    .hero p { max-width: 730px; margin: 0 auto 34px; color: var(--muted); font-size: clamp(.98rem, 1.5vw, 1.15rem); }
+    h1 { font-size: clamp(2.55rem, 6vw, 5.2rem); max-width: 980px; margin: 0 auto 24px; }
+    .hero p { max-width: 760px; margin: 0 auto 34px; color: var(--muted); font-size: clamp(.98rem, 1.5vw, 1.15rem); }
     .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
     .features { padding: 72px 0 90px; }
-    .feature-grid, .practice-grid, .experience-grid, .contact-cards { display: grid; gap: 22px; }
+    .feature-grid, .practice-grid, .experience-grid, .contact-cards, .article-grid { display: grid; gap: 22px; }
     .feature-grid { grid-template-columns: repeat(3, 1fr); }
     .card { background: var(--card); border: 1px solid var(--divider); transition: transform .3s, border-color .3s, box-shadow .3s; }
     .card:hover { transform: translateY(-6px); border-color: rgba(201,166,70,.55); box-shadow: var(--shadow); }
     .feature-card { padding: 34px; }
     .icon-box { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 22px; border: 1px solid rgba(201,166,70,.45); color: var(--gold); font-size: 1.15rem; }
-    .feature-card h3, .practice-card h3, .experience-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
+    .feature-card h3, .practice-card h3, .experience-card h3, .article-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
     .card p { color: var(--muted); font-size: .88rem; }
 
     .page-intro { padding: 88px 0 50px; text-align: center; }
     .page-intro h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 5vw, 3.8rem); }
-    .page-intro p { max-width: 680px; margin-inline: auto; color: var(--muted); }
+    .page-intro p { max-width: 760px; margin-inline: auto; color: var(--muted); }
     .content-pad { padding: 30px 0 100px; }
 
     .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(45px, 8vw, 100px); }
     .about-image { position: relative; }
     .about-image img { width: 100%; height: 580px; object-fit: cover; filter: saturate(.72); }
-    .floating-badge { position: absolute; right: -25px; bottom: 35px; max-width: 190px; padding: 22px; background: var(--gold); color: var(--bg); font-family: "Playfair Display", serif; font-weight: 700; box-shadow: var(--shadow); }
+    .floating-badge { position: absolute; right: -25px; bottom: 35px; max-width: 205px; padding: 22px; background: var(--gold); color: var(--bg); font-family: "Playfair Display", serif; font-weight: 700; box-shadow: var(--shadow); }
     .about-copy h2 { margin-bottom: 24px; font-size: clamp(2.1rem, 4vw, 3.35rem); }
     .about-copy > p { margin-bottom: 18px; color: var(--muted); }
     .institutional-quote { margin: 28px 0; padding-left: 24px; border-left: 2px solid var(--gold); color: var(--ice) !important; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-style: italic; line-height: 1.4; }
@@ -92,9 +92,17 @@
     .mini-card { padding: 18px 14px; border: 1px solid var(--divider); color: var(--muted); font-size: .75rem; text-align: center; }
     .mini-card i { display: block; margin-bottom: 10px; color: var(--gold); font-size: 1rem; }
 
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 24px; background: var(--card); border: 1px solid var(--divider); }
+    .timeline-year { color: var(--gold); font-family: "Playfair Display", serif; font-size: 1.35rem; font-weight: 700; }
+    .timeline-item h3 { margin-bottom: 8px; font-size: 1.18rem; }
+    .timeline-item p { color: var(--muted); font-size: .88rem; }
+
     .practice-grid { grid-template-columns: repeat(3, 1fr); }
-    .practice-card { min-height: 310px; padding: 34px; display: flex; flex-direction: column; align-items: flex-start; }
-    .practice-card p { flex: 1; margin-bottom: 24px; }
+    .practice-card { min-height: 330px; padding: 34px; display: flex; flex-direction: column; align-items: flex-start; }
+    .practice-card p { flex: 1; margin-bottom: 20px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .tag-list span { padding: 6px 9px; border: 1px solid var(--divider); color: var(--muted); font-size: .68rem; }
     .text-link { color: var(--gold); border: 0; background: transparent; font-size: .76rem; font-weight: 600; cursor: pointer; }
     .text-link i { margin-left: 7px; transition: transform .2s; }
     .text-link:hover i { transform: translateX(4px); }
@@ -106,6 +114,14 @@
     .experience-card::after { content: attr(data-number); position: absolute; right: 22px; top: 8px; color: rgba(201,166,70,.1); font-family: "Playfair Display", serif; font-size: 5rem; line-height: 1; }
     .experience-card .icon-box { position: relative; z-index: 1; }
     .disclaimer { margin-top: 30px; padding: 18px 22px; border-left: 2px solid var(--gold); background: rgba(201,166,70,.06); color: var(--muted); font-size: .78rem; }
+
+    .article-grid { grid-template-columns: repeat(2, 1fr); }
+    .article-card { padding: 34px; }
+    .article-card .meta { margin-bottom: 10px; color: var(--gold); font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .faq-list { display: grid; gap: 14px; margin-top: 28px; }
+    .faq-item { padding: 24px; border: 1px solid var(--divider); background: rgba(16,27,45,.72); }
+    .faq-item h3 { margin-bottom: 8px; font-size: 1.05rem; }
+    .faq-item p { color: var(--muted); font-size: .86rem; }
 
     .contact-cards { grid-template-columns: repeat(3, 1fr); margin-bottom: 34px; }
     .contact-card { padding: 28px; text-align: center; }
@@ -155,7 +171,7 @@
       .nav-list.open { transform: translateX(0); visibility: visible; }
       .nav-link { display: block; padding: 17px 0; border-bottom: 1px solid var(--divider); font-size: .9rem; }
       .nav-link::after { display: none; }
-      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .practice-grid, .article-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; }
       .about-image { max-width: 650px; }
       .about-image img { height: 480px; }
@@ -167,13 +183,14 @@
       .hero { min-height: calc(100svh - var(--header-height)); }
       .hero-content { padding: 45px 0; }
       .button-row { flex-direction: column; align-items: stretch; }
-      .feature-grid, .practice-grid, .experience-grid, .contact-cards, .contact-layout, .footer-grid { grid-template-columns: 1fr; }
+      .feature-grid, .practice-grid, .experience-grid, .contact-cards, .contact-layout, .footer-grid, .article-grid { grid-template-columns: 1fr; }
       .features { padding: 42px 0 65px; }
       .page-intro { padding: 62px 0 30px; }
       .content-pad { padding: 18px 0 72px; }
       .mini-grid { grid-template-columns: 1fr; }
       .about-image img { height: 400px; }
       .floating-badge { right: 10px; bottom: 15px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
       .form-grid { grid-template-columns: 1fr; }
       .field-full { grid-column: auto; }
       .map-panel iframe { min-height: 330px; }
@@ -194,9 +211,10 @@
         <nav aria-label="Navegação principal">
           <ul class="nav-list" id="nav-list">
             <li><a class="nav-link current" href="#home" data-section="home">Home</a></li>
-            <li><a class="nav-link" href="#sobre" data-section="sobre">Sobre</a></li>
+            <li><a class="nav-link" href="#perfil" data-section="perfil">Perfil</a></li>
+            <li><a class="nav-link" href="#trajetoria" data-section="trajetoria">Trajetória</a></li>
             <li><a class="nav-link" href="#areas" data-section="areas">Áreas de Atuação</a></li>
-            <li><a class="nav-link" href="#experiencias" data-section="experiencias">Atuação e Experiências</a></li>
+            <li><a class="nav-link" href="#conteudo" data-section="conteudo">Conteúdo</a></li>
             <li><a class="nav-link" href="#contato" data-section="contato">Contato</a></li>
           </ul>
         </nav>
@@ -210,78 +228,108 @@
     <section id="home" class="section active" aria-labelledby="home-title">
       <div class="hero">
         <div class="container hero-content">
-          <span class="eyebrow">Advocacia responsável</span>
-          <h1 id="home-title">Soluções jurídicas com estratégia, ética e segurança</h1>
-          <p>Atendimento jurídico personalizado para pessoas físicas e empresas, com análise cuidadosa e orientação clara para cada situação.</p>
+          <span class="eyebrow">OAB/SC 34.503</span>
+          <h1 id="home-title">Advocacia cível com ética, sobriedade e atenção individual</h1>
+          <p>Atendimento jurídico em Indaial/SC, com foco em Direito Civil, Família e Sucessões, planejamento patrimonial e consultoria para organizações do terceiro setor.</p>
           <div class="button-row">
-            <a href="#contato" class="btn" data-section="contato"><i class="fa-regular fa-message"></i> Entrar em contato</a>
-            <a href="#areas" class="btn btn-outline" data-section="areas">Conhecer áreas de atuação</a>
+            <a href="#contato" class="btn" data-section="contato"><i class="fa-regular fa-message"></i> Agendar consulta</a>
+            <a href="#perfil" class="btn btn-outline" data-section="perfil">Conhecer o perfil</a>
           </div>
         </div>
       </div>
       <div class="features">
         <div class="container feature-grid">
-          <article class="card feature-card"><div class="icon-box"><i class="fa-regular fa-handshake"></i></div><h3>Atendimento personalizado</h3><p>Escuta atenta e orientação compatível com as particularidades de cada demanda.</p></article>
-          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div><h3>Análise estratégica do caso</h3><p>Avaliação criteriosa dos fatos, documentos e caminhos juridicamente adequados.</p></article>
-          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><h3>Ética, transparência e discrição</h3><p>Comunicação objetiva e condução responsável em todas as etapas do atendimento.</p></article>
+          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div><h3>Atuação técnica</h3><p>Análise cuidadosa dos fatos, documentos e caminhos juridicamente adequados para cada demanda.</p></article>
+          <article class="card feature-card"><div class="icon-box"><i class="fa-regular fa-handshake"></i></div><h3>Pacificação social</h3><p>Busca por soluções responsáveis, com diálogo, transparência e respeito à dignidade humana.</p></article>
+          <article class="card feature-card"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><h3>Sigilo e discrição</h3><p>Triagem e atendimento conduzidos com reserva profissional e observância das regras éticas da advocacia.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="sobre" class="section" aria-labelledby="sobre-title">
+    <section id="perfil" class="section" aria-labelledby="perfil-title">
       <div class="container content-pad" style="padding-top:80px">
         <div class="about-grid">
           <div class="about-image">
             <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Ambiente profissional de escritório" loading="lazy">
-            <div class="floating-badge">Atuação Jurídica Especializada</div>
+            <div class="floating-badge">Direito Civil, Família e Sucessões</div>
           </div>
           <div class="about-copy">
             <span class="eyebrow">Perfil profissional</span>
-            <h2 id="sobre-title">Sobre Guilherme Theodoro Fredrich</h2>
-            <p>Guilherme Theodoro Fredrich desenvolve uma advocacia pautada pelo atendimento jurídico responsável, pela comunicação clara e pela análise cuidadosa das necessidades de cada cliente.</p>
-            <p>A atuação é conduzida de forma personalizada, considerando as circunstâncias específicas de cada demanda para orientar decisões com segurança e transparência.</p>
-            <p class="institutional-quote">“Rigor técnico, diálogo transparente e atenção individual em cada orientação jurídica.”</p>
+            <h2 id="perfil-title">Guilherme Theodoro Fredrich</h2>
+            <p>Guilherme Theodoro Fredrich, OAB/SC 34.503, é advogado brasileiro com formação jurídica pela Fundação Universidade Regional de Blumenau (FURB) e trajetória marcada por liderança institucional, mediação comunitária, comunicação social e atuação jurídica cível.</p>
+            <p>Antes da advocacia, construiu experiência em contextos comunitários e eclesiásticos em diferentes regiões do país, incluindo Rio Branco, Porto Alegre, Niterói e Indaial. Essa vivência fortalece uma prática profissional orientada pelo diálogo, pela responsabilidade social e pela escuta atenta.</p>
+            <p>No Direito, concentra sua atuação em demandas cíveis, familiares, sucessórias, patrimoniais e consultivas, sempre com observância à ética profissional, transparência e análise individualizada de cada caso.</p>
+            <p class="institutional-quote">“O exercício da advocacia fundamenta-se na busca pela pacificação social, no respeito à dignidade humana e na aplicação técnica do ordenamento jurídico.”</p>
             <div class="mini-grid">
-              <div class="mini-card"><i class="fa-regular fa-comments"></i>Atendimento consultivo</div>
-              <div class="mini-card"><i class="fa-solid fa-magnifying-glass"></i>Atuação preventiva</div>
-              <div class="mini-card"><i class="fa-solid fa-fingerprint"></i>Soluções personalizadas</div>
+              <div class="mini-card"><i class="fa-solid fa-graduation-cap"></i>FURB, Direito, 2010</div>
+              <div class="mini-card"><i class="fa-solid fa-award"></i>TCC com nota máxima</div>
+              <div class="mini-card"><i class="fa-solid fa-landmark"></i>OAB/SC 34.503</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="areas" class="section" aria-labelledby="areas-title">
+    <section id="trajetoria" class="section" aria-labelledby="trajetoria-title">
       <div class="container">
-        <header class="page-intro"><span class="eyebrow">Serviços jurídicos</span><h2 id="areas-title">Áreas de Atuação</h2><p>Orientação jurídica técnica e individualizada, conforme as particularidades de cada situação.</p></header>
-        <div class="practice-grid content-pad">
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-landmark"></i></div><h3>Direito Civil</h3><p>Orientação em obrigações, responsabilidade civil, questões patrimoniais e relações privadas.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-people-roof"></i></div><h3>Direito de Família</h3><p>Acompanhamento responsável em demandas familiares, com sensibilidade, discrição e clareza.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-briefcase"></i></div><h3>Direito Trabalhista</h3><p>Análise e orientação sobre relações de trabalho, direitos, deveres e prevenção de conflitos.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-building"></i></div><h3>Direito Empresarial</h3><p>Suporte jurídico para questões societárias, negociais e rotinas legais da atividade empresarial.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-file-signature"></i></div><h3>Direito Contratual</h3><p>Elaboração, revisão e interpretação de contratos, com atenção a riscos e obrigações.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
-          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-chess-knight"></i></div><h3>Consultoria Jurídica Preventiva</h3><p>Identificação de riscos e orientação antecipada para decisões juridicamente mais seguras.</p><button class="text-link" data-go-contact>Saiba mais <i class="fa-solid fa-arrow-right"></i></button></article>
+        <header class="page-intro"><span class="eyebrow">Histórico institucional</span><h2 id="trajetoria-title">Trajetória e Formação</h2><p>Uma trajetória que reúne atuação comunitária, comunicação, formação acadêmica e consolidação na advocacia cível em Santa Catarina.</p></header>
+        <div class="timeline content-pad">
+          <article class="timeline-item">
+            <div class="timeline-year">1985-1987</div>
+            <div><h3>Atuação missionária na Amazônia</h3><p>Atuação pastoral em Rio Branco/AC, com suporte a famílias migrantes e participação em frentes ligadas a direitos humanos e defesa socioambiental.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">1988-2004</div>
+            <div><h3>Comunicação e liderança comunitária</h3><p>Experiências em Porto Alegre/RS e Niterói/RJ, incluindo direção paroquial e coordenação de iniciativa de rádio via internet, aproximando comunicação, comunidade e serviço público.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2005-2010</div>
+            <div><h3>Retorno a Santa Catarina e graduação jurídica</h3><p>Atuação em Indaial/SC e formação em Direito pela FURB. Trabalho de Conclusão de Curso em Direito Civil e Bioética aprovado com nota máxima.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2011-presente</div>
+            <div><h3>Advocacia e reconhecimento institucional</h3><p>Estabelecimento de banca advocatícia cível em Indaial/SC, homenagem em sessão solene da Alesc e inclusão em lista oficial da OAB/SC para vaga de Juiz Substituto do TRE-SC em 2023.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="experiencias" class="section" aria-labelledby="experiencias-title">
-      <div class="container experience-wrap">
-        <header class="page-intro"><span class="eyebrow">Abordagem profissional</span><h2 id="experiencias-title">Atuação e Experiências</h2><p>Frentes de trabalho conduzidas com atenção técnica, diálogo e análise individual.</p></header>
-        <div class="experience-grid content-pad" style="padding-bottom:0">
-          <article class="card experience-card" data-number="01"><div class="icon-box"><i class="fa-regular fa-handshake"></i></div><h3>Negociação extrajudicial</h3><p>Condução de tratativas e construção de alternativas consensuais, quando adequadas às circunstâncias analisadas.</p></article>
-          <article class="card experience-card" data-number="02"><div class="icon-box"><i class="fa-solid fa-file-circle-check"></i></div><h3>Análise preventiva de contratos</h3><p>Leitura técnica de cláusulas, identificação de obrigações e avaliação de riscos antes da formalização.</p></article>
-          <article class="card experience-card" data-number="03"><div class="icon-box"><i class="fa-regular fa-compass"></i></div><h3>Orientação jurídica personalizada</h3><p>Esclarecimento de dúvidas e apresentação de caminhos jurídicos compatíveis com a situação do cliente.</p></article>
-          <article class="card experience-card" data-number="04"><div class="icon-box"><i class="fa-solid fa-route"></i></div><h3>Resolução estratégica de conflitos</h3><p>Análise dos cenários disponíveis para definição de uma abordagem técnica, proporcional e responsável.</p></article>
+    <section id="areas" class="section" aria-labelledby="areas-title">
+      <div class="container">
+        <header class="page-intro"><span class="eyebrow">Serviços jurídicos</span><h2 id="areas-title">Áreas de Atuação</h2><p>Atendimento voltado à orientação técnica, prevenção de conflitos e condução responsável de demandas cíveis e familiares.</p></header>
+        <div class="practice-grid content-pad">
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-people-roof"></i></div><h3>Família e Sucessões</h3><p>Inventários judiciais e extrajudiciais, divórcio, união estável, guarda, convivência familiar, alimentos e planejamento sucessório básico.</p><div class="tag-list"><span>Inventário</span><span>Divórcio</span><span>Sucessões</span></div></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-landmark"></i></div><h3>Direito Civil Geral</h3><p>Responsabilidade civil, reparação de danos, cobranças, posse, propriedade e orientação em relações privadas patrimoniais.</p><div class="tag-list"><span>Danos</span><span>Cobranças</span><span>Patrimônio</span></div></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-file-signature"></i></div><h3>Contratos Civis</h3><p>Análise, revisão e elaboração de contratos de compra, venda, locação, permuta, doação e outros instrumentos civis.</p><div class="tag-list"><span>Revisão</span><span>Risco</span><span>Cláusulas</span></div></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-house-chimney"></i></div><h3>Planejamento Patrimonial</h3><p>Orientação sobre regimes de bens, doação com reserva de usufruto, testamento, pacto antenupcial e prevenção de litígios familiares.</p><div class="tag-list"><span>Usufruto</span><span>Testamento</span><span>Pacto</span></div></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div><h3>Terceiro Setor</h3><p>Elaboração e revisão de estatutos, regimentos internos e orientação jurídica para associações, fundações e organizações religiosas.</p><div class="tag-list"><span>Estatutos</span><span>Regimentos</span><span>Convênios</span></div></article>
+          <article class="card practice-card"><div class="icon-box"><i class="fa-solid fa-comments"></i></div><h3>Consultoria Preventiva</h3><p>Esclarecimento jurídico e organização documental para apoiar decisões seguras antes da formação ou agravamento de conflitos.</p><div class="tag-list"><span>Triagem</span><span>Documentos</span><span>Orientação</span></div></article>
         </div>
-        <p class="disclaimer">As informações apresentadas possuem caráter ilustrativo e não representam promessa de resultado. Cada caso depende de análise individual.</p>
+      </div>
+    </section>
+
+    <section id="conteudo" class="section" aria-labelledby="conteudo-title">
+      <div class="container experience-wrap">
+        <header class="page-intro"><span class="eyebrow">Informação jurídica</span><h2 id="conteudo-title">Temas para Orientação Inicial</h2><p>Conteúdo informativo de apoio para quem busca compreender temas frequentes em família, sucessões e organização patrimonial.</p></header>
+        <div class="article-grid content-pad" style="padding-bottom:0">
+          <article class="card article-card"><div class="meta">Planejamento familiar</div><h3>Regimes de bens e prevenção de conflitos</h3><p>A escolha do regime patrimonial e a organização sucessória permitem reduzir incertezas e orientar decisões familiares com maior segurança jurídica.</p></article>
+          <article class="card article-card"><div class="meta">Sucessões</div><h3>Doação com reserva de usufruto</h3><p>Instrumento que permite transferir a nua-propriedade de bens, preservando o uso ou rendimentos ao doador, conforme análise do caso concreto.</p></article>
+          <article class="card article-card"><div class="meta">Herança</div><h3>Concorrência sucessória</h3><p>A participação do cônjuge ou companheiro na herança depende do regime de bens e da composição patrimonial deixada pelo falecido.</p></article>
+          <article class="card article-card"><div class="meta">Santa Catarina</div><h3>ITCMD e alíquotas progressivas</h3><p>O imposto sobre heranças e doações em Santa Catarina exige atenção ao valor de mercado, ao vínculo familiar e às faixas legais aplicáveis.</p></article>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item"><h3>O que é inventário extrajudicial?</h3><p>É o procedimento realizado por escritura pública em cartório, quando os requisitos legais estão presentes, com participação obrigatória de advogado.</p></article>
+          <article class="faq-item"><h3>Quais documentos costumam ser necessários em inventário?</h3><p>Certidão de óbito, documentos do falecido e herdeiros, certidões atualizadas, matrículas de imóveis, dados de veículos, saldos bancários e demais informações patrimoniais.</p></article>
+          <article class="faq-item"><h3>Qual o cuidado com testamento cerrado?</h3><p>O documento lacrado fica sob guarda do testador. Violação do lacre ou perda do documento pode comprometer sua eficácia, exigindo análise jurídica específica.</p></article>
+        </div>
+        <p class="disclaimer">As informações apresentadas possuem finalidade exclusivamente informativa e não substituem consulta jurídica individualizada. Casos concretos exigem análise técnica por profissional habilitado.</p>
         <div style="height:90px"></div>
       </div>
     </section>
 
     <section id="contato" class="section" aria-labelledby="contato-title">
       <div class="container">
-        <header class="page-intro"><span class="eyebrow">Atendimento</span><h2 id="contato-title">Entre em contato</h2><p>Agende uma conversa para análise inicial do seu caso.</p></header>
+        <header class="page-intro"><span class="eyebrow">Atendimento</span><h2 id="contato-title">Entre em contato</h2><p>Atendimento mediante agendamento prévio para triagem inicial e análise técnica da demanda.</p></header>
         <div class="contact-cards">
           <article class="card contact-card"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3><a href="https://wa.me/5547988026107" target="_blank" rel="noopener noreferrer">Iniciar conversa</a></article>
           <article class="card contact-card"><i class="fa-regular fa-envelope"></i><h3>E-mail</h3><a href="mailto:guilhermef@tpa.com.br">Enviar e-mail</a></article>
@@ -293,8 +341,8 @@
               <div><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="name" required></div>
               <div><label for="telefone">Telefone/WhatsApp</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" required></div>
               <div><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-              <div><label for="area">Área de interesse</label><select id="area" name="area" required><option value="">Selecione</option><option>Direito Civil</option><option>Direito de Família</option><option>Direito Trabalhista</option><option>Direito Empresarial</option><option>Direito Contratual</option><option>Consultoria Jurídica Preventiva</option><option>Outro assunto</option></select></div>
-              <div class="field-full"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" required></textarea></div>
+              <div><label for="area">Área de interesse</label><select id="area" name="area" required><option value="">Selecione</option><option>Família e Sucessões</option><option>Direito Civil Geral</option><option>Contratos Civis</option><option>Planejamento Patrimonial</option><option>Terceiro Setor</option><option>Consultoria Preventiva</option><option>Outro assunto</option></select></div>
+              <div class="field-full"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" placeholder="Informe brevemente o assunto de interesse. Caso exista processo em andamento, o número pode ser informado aqui."></textarea></div>
               <div class="field-full"><button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Enviar solicitação</button><p class="form-note">Formulário demonstrativo. O envio requer integração posterior com um serviço de e-mail ou servidor.</p><p class="form-status" role="status" aria-live="polite"></p></div>
             </div>
           </form>
@@ -319,11 +367,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div><div class="footer-title">Guilherme Theodoro Fredrich</div><p class="footer-subtitle">Advocacia e Consultoria Jurídica</p></div>
-        <div><div class="footer-heading">Links rápidos</div><div class="footer-links"><button data-section="home">Home</button><button data-section="sobre">Sobre</button><button data-section="areas">Áreas de Atuação</button><button data-section="experiencias">Atuação e Experiências</button><button data-section="contato">Contato</button></div></div>
+        <div><div class="footer-title">Guilherme Theodoro Fredrich</div><p class="footer-subtitle">Advocacia e Consultoria Jurídica | OAB/SC 34.503</p></div>
+        <div><div class="footer-heading">Links rápidos</div><div class="footer-links"><button data-section="home">Home</button><button data-section="perfil">Perfil</button><button data-section="trajetoria">Trajetória</button><button data-section="areas">Áreas de Atuação</button><button data-section="conteudo">Conteúdo</button><button data-section="contato">Contato</button></div></div>
         <div><div class="footer-heading">Redes sociais</div><div class="socials" aria-label="Perfis ainda não informados"><span title="Perfil não informado"><i class="fa-brands fa-instagram"></i></span><span title="Perfil não informado"><i class="fa-brands fa-linkedin-in"></i></span></div></div>
       </div>
-      <div class="footer-bottom"><p class="legal">Este site possui caráter informativo e não substitui uma consulta jurídica individualizada.</p><p class="legal">© <span id="year"></span> Guilherme Theodoro Fredrich</p></div>
+      <div class="footer-bottom"><p class="legal">Este site possui caráter informativo e não substitui consulta jurídica individualizada.</p><p class="legal">© <span id="year"></span> Guilherme Theodoro Fredrich</p></div>
     </div>
   </footer>
 
@@ -365,8 +413,6 @@
         event.preventDefault();
         showSection(trigger.dataset.section);
       });
-
-      document.querySelectorAll('[data-go-contact]').forEach(button => button.addEventListener('click', () => showSection('contato')));
 
       toggle.addEventListener('click', () => {
         const opening = !menu.classList.contains('open');
